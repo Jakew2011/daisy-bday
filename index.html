@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#cfe6df">
+  <title>Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="floatingList" class="floating-list" aria-hidden="true"></div>
+  <audio id="music" src="https://cdn.pixabay.com/download/audio/2026/08/26/audio_ec77ea0e91.mp3?filename=sub_clair-happy-birthday-592177.mp3" loop preload="auto"></audio>
+  <button id="muteBtn" class="mute" aria-pressed="false" hidden>Sound on</button>
+
+  <section id="start" class="screen active">
+    <div class="note">
+      <span class="tape"></span>
+      <h1>Happy birthday!!</h1>
+      <p>Make sure your sound is up! (very important).</p>
+      <button id="startBtn" class="btn">Tap to start</button>
+    </div>
+  </section>
+
+  <section id="show" class="screen">
+    <div id="stage" class="stage"></div>
+    <div class="hud">
+      <div class="bar"><i id="barFill"></i></div>
+      <div id="counter" class="counter">00 / 00</div>
+    </div>
+  </section>
+
+  <section id="reveal" class="screen">
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+    <h2 class="hb"><span>Happy</span><span>Birthday</span></h2>
+    <p id="nameEl" class="name"></p>
+    <button id="albumBtn" class="btn">Open album</button>
+  </section>
+
+  <section id="album" class="screen scroll">
+    <div class="album-wrap">
+      <h2 class="album-title">All photos featured:</h2>
+      <p class="hint">Tap a photo to see it bigger.</p>
+      <p class="hint">Sorry I couldn't find more epic pics.</p>
+      <p class="hint">And yes seeing I couldn't come I decided to do this instead.</p>
+      <div id="grid" class="grid"></div>
+      <button id="restartBtn" class="btn ghost">Restart</button>
+    </div>
+  </section>
+
+  <div id="viewer" class="viewer" hidden>
+    <button id="vClose" class="v-btn v-close" aria-label="Close">&times;</button>
+    <img id="vImg" alt="">
+    <div class="v-nav">
+      <button id="vPrev" class="v-btn" aria-label="Previous photo">&larr;</button>
+      <button id="vNext" class="v-btn" aria-label="Next photo">&rarr;</button>
+    </div>
+  </div>
+</body>
+</html>
