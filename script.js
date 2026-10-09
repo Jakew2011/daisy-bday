@@ -297,4 +297,22 @@ $("restartBtn").onclick = () => {
   show("start");
 };
 
+window.previewAlbum = () => {
+  run++;
+  stage.replaceChildren();
+  current = null;
+  $("startBtn").disabled = false;
+  $("barFill").classList.remove("run");
+  closeViewer();
+  if (music) {
+    music.pause();
+    music.currentTime = 0;
+  }
+  if (muteBtn) muteBtn.hidden = true;
+  clearSplatList();
+  renderAlbum();
+  $("album").scrollTop = 0;
+  show("album");
+};
+
 preload(0);
